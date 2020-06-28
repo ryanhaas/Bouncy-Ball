@@ -1,1 +1,1 @@
-CALL java -jar output/BouncyBall.jar
+CALL java -jar output/BouncyBallV2.jar
