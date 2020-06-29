@@ -661,6 +661,6 @@ public class BigClip implements Clip, LineListener {
 
         // audioData
         logger.log(Level.FINEST, "Max signal level: " + (double)largest/(Math.pow(2, bitDepth-1)));
-        return (double)largest/(Math.pow(2, bitDepth-1));
-    }
+		return (double) largest / (Math.pow(2, bitDepth - 1));
+	}
 }
