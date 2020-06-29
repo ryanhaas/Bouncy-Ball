@@ -1,9 +1,11 @@
 package resources;
 import java.awt.*;
+import java.io.Serializable;
 
-public class StarPolygon extends Polygon {
+public class StarPolygon extends Polygon implements Serializable {
 	private boolean show = true;
-	
+	private int r;
+
     public StarPolygon(int x, int y, int r, int innerR, int vertexCount) {
         this(x, y, r, innerR, vertexCount, 0);
     }
@@ -11,6 +13,7 @@ public class StarPolygon extends Polygon {
         super(getXCoordinates(x, y, r, innerR,  vertexCount, startAngle)
               ,getYCoordinates(x, y, r, innerR, vertexCount, startAngle)
               ,vertexCount*2);
+        this.r = r;
     }
 
     protected static int[] getXCoordinates(int x, int y, int r, int innerR, int vertexCount, double startAngle) {
@@ -40,12 +43,23 @@ public class StarPolygon extends Polygon {
         }
         return res;
     }
-    
+
     public void setShow(boolean s) {
     	show = s;
     }
-    
+
     public boolean getShow() {
     	return show;
+    }
+
+    public void setLocation(int x, int y) {
+    	for(int i = 0; i < xpoints.length; i++)
+    		xpoints[i] = x;
+    	for(int i = 0; i < ypoints.length; i++)
+    		ypoints[i] = y;
+    }
+
+    public int getSize() {
+    	return r;
     }
 }
