@@ -1,3 +1,3 @@
 #!/bin/bash
 
-java -jar output/BouncyBallV2.jar
+java -jar output/BouncyBallV3.jar
